@@ -183,3 +183,14 @@ console.log(false && "hello");
 //falsy values: 0 , null , undefined , " ".
 console.log(true || "hello");
 console.log(false || "hello");
+
+//Optional Chaining(it allows to cancel the unrequired components --> ?.)
+function getReviewCount(book) {
+  const goodreads = book.reviews.goodreads.reviewsCount;
+  const librarything = book.review.librarything.reviewsCount;
+  return goodreads + librarything;
+}
+
+console.log(getReviewCount(book));
+
+//Array Methods(Map,Filter and Reduce)
