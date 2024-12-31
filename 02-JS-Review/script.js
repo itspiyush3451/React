@@ -1,4 +1,4 @@
-const data = [
+/*const data = [
   {
     id: 1,
     title: "The Lord of the Rings",
@@ -144,53 +144,87 @@ function getBook(id) {
 }
 
 //Destructuring
-const book = getBook(4);
+const books = getBook(4);
 // const auth = book.author;
 // auth;
 const { author, title, pages, publicationDate, genres, hasMovieAdaptation } =
   book;
 console.log(author, title, genres);
 
-//Destructuring using arrays
-// const primaryGenre = genres[0];
-// const secondaryGenre = genres[1];
-const [primary, secondary] = genres;
-console.log(primary);
+// //Destructuring using arrays
+// // const primaryGenre = genres[0];
+// // const secondaryGenre = genres[1];
+// const [primary, secondary] = genres;
+// console.log(primary);
 
-//rest operator (,... etc)
-const [prime, second, ...others] = genres;
-console.log(prime, others);
+// //rest operator (,... etc)
+// const [prime, second, ...others] = genres;
+// console.log(prime, others);
 
-//Arrow functions() -> mostly used for writing one line functions
-// function getYear(str) {
-//   return str.split("-")[0];
-// }
+// //Arrow functions() -> mostly used for writing one line functions
+// // function getYear(str) {
+// //   return str.split("-")[0];
+// // }
 
-const getYear = (str) => str.split("-")[0];
-console.log(getYear(publicationDate));
+// const getYear = (str) => str.split("-")[0];
+// console.log(getYear(publicationDate));
 
-//Template literals :- `${expressions(any)}`
-const summary = `${title} is a book published in ${getYear(publicationDate)}`;
-summary;
+// //Template literals :- `${expressions(any)}`
+// const summary = `${title} is a book published in ${getYear(publicationDate)}`;
+// summary;
 
-//Ternary operators(basically has 3 operands : condition,? -->if,: -->else)
-const pagesrange = pages > 1000 ? "over a thousand" : "less than 1000";
-console.log(pagesrange);
+// //Ternary operators(basically has 3 operands : condition,? -->if,: -->else)
+// const pagesrange = pages > 1000 ? "over a thousand" : "less than 1000";
+// console.log(pagesrange);
 
-//Short Circuiting(returning the first false without even looking for the second arg (uses &&  and ||))
-console.log(true && "hello");
-console.log(false && "hello");
-//falsy values: 0 , null , undefined , " ".
-console.log(true || "hello");
-console.log(false || "hello");
+// //Short Circuiting(returning the first false without even looking for the second arg (uses &&  and ||))
+// console.log(true && "hello");
+// console.log(false && "hello");
+// //falsy values: 0 , null , undefined , " ".
+// console.log(true || "hello");
+// console.log(false || "hello");
 
-//Optional Chaining(it allows to cancel the unrequired components --> ?.)
-function getReviewCount(book) {
-  const goodreads = book.reviews.goodreads.reviewsCount;
-  const librarything = book.review.librarything.reviewsCount;
-  return goodreads + librarything;
+// //Optional Chaining(it allows to cancel the unrequired components --> ?.)
+// // function getReviewCount(book) {
+// //   const goodreads = book.reviews.goodreads.reviewsCount;
+// //   const librarything = book.review.librarything.reviewsCount;
+// //   return goodreads + librarything;
+// // }
+
+// // console.log(getReviewCount(book));
+
+// //Array Methods(Map,Filter and Reduce)
+// //Mapping(creating a single element or operation that will be applicable for all the elements in array)
+// const x = [1, 2, 3, 4, 5, 6, 7].map((el) => el * 2);
+// console.log(x);
+
+// const adventureBooks = books
+//   .filter((books) => books.genres.includes("adventure"))
+//   .map((books) => books.title);
+// console.log(adventureBooks);
+
+//Working with immutable elements
+//add new book obj in array
+const newBook = {
+  id: 6,
+  title: "piyush",
+  author: "piyush",
+};
+const bookAfterAdd = [...book, newBook];
+bookAfterAdd;
+*/
+
+// Asynchronous JavaScript :Promises
+// console
+//   .log(fetch("https://jsonplaceholder.typicode.com/todos"))
+//   .then((res) => res.json())
+//   .then((data) => console.log(data));
+
+//Async and Await
+
+async function getTodo() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await res.json();
+  console.log(data);
 }
-
-console.log(getReviewCount(book));
-
-//Array Methods(Map,Filter and Reduce)
+getTodo();
