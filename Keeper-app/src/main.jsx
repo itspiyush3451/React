@@ -5,3 +5,5 @@ import "./index.css";
 // import App from "./App.jsx";
 import App from "./components/App.jsx";
 createRoot(document.getElementById("root")).render(<App />);
+//Challenge. Render all the notes inside notes.js as a seperate Note
+//component.

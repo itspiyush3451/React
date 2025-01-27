@@ -1,10 +1,12 @@
 import React from "react";
-
-function Note() {
+import notes from "./notes";
+function Note(props) {
   return (
-    <div>
-      <h1>How to Add two nums</h1>
-      <p>2+2,2+3</p>
+    <div className="note">
+      <div>
+        <h1>{props.title}</h1>
+        <p>{props.body}</p>
+      </div>
     </div>
   );
 }
